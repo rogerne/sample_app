@@ -11,6 +11,8 @@ gem 'pg', '0.12.2'
 group :development, :test do
 	#gem 'sqlite3', '1.3.5' Replaced by gem 'pg'
 	gem 'rspec-rails', '2.9.0'
+	#Added listing 3.33 26/11/13
+	gem 'guard-rspec', '0.5.5'
 end
 
 # Gems used only for assets and not required
@@ -32,7 +34,15 @@ gem 'jquery-rails', '~> 2.0.0'
 
 #Added NR 15/11/13
 group :test do
+	gem 'rspec-rails', '2.9.0'
 	gem 'capybara', '1.1.2'
+	#Added a load of stuff for Guard & Spork 26/11/13
+	gem 'rb-fchange', '0.0.5'
+	gem 'rb-notifu', '0.0.4'
+	gem 'win32console', '1.3.0'
+	#Commented out 'guard-spork' because “fork” isn’t implemented on windows
+	#gem 'guard-spork', '0.3.2'
+	gem 'spork', '0.9.0'
 end
 
 #Added NR 15/11/13
