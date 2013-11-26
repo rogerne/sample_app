@@ -1,13 +1,15 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
+#Add gem for PostgreSQL 25/11/13
+gem 'pg', '0.12.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #Added NR 15/11/13
 group :development, :test do
-	gem 'sqlite3', '1.3.5'
+	#gem 'sqlite3', '1.3.5' Replaced by gem 'pg'
 	gem 'rspec-rails', '2.9.0'
 end
 
