@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 #Add gem for PostgreSQL 25/11/13
 gem 'pg', '0.12.2'
+#Add gem for Bootstrap framework 28/11/13
+gem 'bootstrap-sass', '2.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
