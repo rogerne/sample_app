@@ -9,7 +9,10 @@ SampleApp::Application.configure do
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
-  config.serve_static_assets = false
+  # 29/11/13: Changed in an attempt to get CSS running on Heroku
+  # See http://stackoverflow.com/questions/16271696/cant-get-css-working-on-heroku-using-rails-4-with-bootstrap-saas-gem
+  #config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS
   config.assets.compress = true
