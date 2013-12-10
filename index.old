@@ -232,7 +232,7 @@
               <li><a href="/static_pages/home">Home</a></li>
               <li><a href="/static_pages/help">Help</a></li>
               <li><a href="/static_pages/about">About</a></li>
-              <li><a href="/static_pages/about">Contact</a></li>
+              <li><a href="/static_pages/contact">Contact</a></li>
             </ol>
           </p>
           <p>Follow me @ruuseukdee</p>
@@ -247,6 +247,14 @@
               wasted a load of time on Guard and Spork which turns out not
               to work on Windows ... ho hum</li>
             <li>28/11/13: Added  Bootstrap and some custom CSS</li>  
+            <li>
+              04/12/13:
+                <ul>
+                  <li>Use the Sprocket gem & manifest files to combine the assets and make the css sassy with Sass</li>
+                  <li>Replace some colours with variables</li>
+                  <li>....</li>
+               </ul>
+             </li>
           </ol>
         </div>
       </div>

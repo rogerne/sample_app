@@ -1,8 +1,59 @@
-<% provide(:title, 'About Us') %>
+<% provide(:title, 'About') %>
 <!DOCTYPE html>
 <h1>About Us</h1>
-<p>
-  This is the home page for the
-  <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
-</p>
+	<h2>
+		<p>
+		  This is the #{:title} page for Neil's Dev Site
+		</p>
+	</h2>
+	<div id="content">
+	<div id="header">
+	  
+	  <h2>We&rsquo;re riding Ruby on Rails!</h2><p></p>
+	  <h3>Current Version = 0.3</h3>
+	</div>
+	<p></p>
+	<div id="about">
+	  <h3><a href="rails/info/properties" onclick="about(); return false">My application&rsquo;s environment</a></h3>
+	  <div id="about-content" style="display: none"></div>
+	</div>
+		<p></p>
+		  Hi. I'm ploughing my way through the Rails tutorial at the moment so you won't find anything too interesting here right now.  Wait a little bit though and you should find some of my old projects brought back to life!
+	  <p>
+	    If all goes well here's what I hope to bring you in the new year.
+	  </p>
+	  <p>
+	    <ol>
+	      <li>iTrack. A bug and issue tracking app.</li>
+	    </ol>
+	  </p>
+	  <div id="about">
+	  <h3>
+	    Log
+	  </h3>
+	  <div></div>
+	  <h2>
+	    Progress so far .....
+	  </h2>
+	  <ol>
+	    <li>26/11/13: Changed both Dev and Prod to use PostgreSQL then
+	      wasted a load of time on Guard and Spork which turns out not
+	      to work on Windows ... ho hum</li>
+	    <li>28/11/13: Added  Bootstrap and some custom CSS</li>  
+	    <li>04/12/13:
+	        <ul>
+	          <li>Use the Sprocket gem & manifest files to combine the assets and make the css sassy with Sass</li>
+	          <li>Replace some colours with variables</li>
+	          <li>....</li>
+	       </ul>
+	     </li>
+	     <li>10/12/13:
+	     	<ul>
+		     	<li>Added the named routes. </li>
+				<li>Refactored the test specs</li>
+				<li>Added a page for users to sign up</li>
+	     	</ul>  
+	  	</li>  
+	  </ol>
+	
+	</div>
