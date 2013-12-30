@@ -6,6 +6,9 @@ gem 'pg', '0.12.2'
 #Add gem for Bootstrap framework 28/11/13
 gem 'bootstrap-sass', '2.0.0'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'faker', '1.0.1'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6' 
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -51,6 +54,10 @@ group :test do
 	#Commented out 'guard-spork' because “fork” isn’t implemented on windows
 	#gem 'guard-spork', '0.3.2'
 	gem 'spork', '0.9.0'
+	#Add a gem so we have factories for creating objects
+	gem 'factory_girl_rails', '1.4.0'
+	gem 'cucumber-rails', '1.2.1', require: false
+    gem 'database_cleaner', github: 'bmabey/database_cleaner'
 end
 
 #Added NR 15/11/13
