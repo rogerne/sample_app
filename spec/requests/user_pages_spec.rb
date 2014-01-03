@@ -57,7 +57,10 @@ describe "User pages" do
       describe "after saving the user" do
         before { click_button submit }
         it { should have_selector('title', text: 'Example User') }
+        it { should have_selector('div.alert.alert-success', text: 'Welcome to the Sample App') }
       end
+
+
     end
   end
 end
