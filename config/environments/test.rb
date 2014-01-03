@@ -38,7 +38,7 @@ SampleApp::Application.configure do
   #Added for rails tutorial 26/12/13
   #Speed up tests by lowering BCrypt's cost function.
   require 'bcrypt'
-    silence_warnings do
+  silence_warnings do
     BCrypt::Engine::DEFAULT_COST = BCrypt::Engine::MIN_COST
   end
 
