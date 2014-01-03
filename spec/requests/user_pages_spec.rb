@@ -33,7 +33,8 @@ describe "User pages" do
       describe "after submission" do  
         before { click_button submit }
         it { should have_selector('title', text: 'Sign up') }
-        it { should have_content('Password digest can\'t be blank') }
+        #Invalidated by addition of code in en.yml
+        #it { should have_content('Password digest can\'t be blank') }
         it { should have_content('Name can\'t be blank') }
         it { should have_content('Email can\'t be blank') }
         it { should have_content('Email is invalid') }
@@ -58,6 +59,13 @@ describe "User pages" do
         before { click_button submit }
         it { should have_selector('title', text: 'Example User') }
         it { should have_selector('div.alert.alert-success', text: 'Welcome to the Sample App') }
+      end
+
+      describe "after reloading the show page" do
+        before { click_button submit }
+        let(:user) { User.find_by_email('user@example.com')}
+        before { visit user_path(user) }
+        it {should_not have_content('Welcome to the Sample App')}
       end
 
 
