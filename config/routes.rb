@@ -1,6 +1,7 @@
 SampleApp::Application.routes.draw do
   #get "users/new"
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   #get "static_pages/home"
   #See below for routing to home
   root to: 'static_pages#home'
@@ -15,6 +16,11 @@ SampleApp::Application.routes.draw do
   match '/contact', to: 'static_pages#contact'
   # The priority is based upon order of creation:
   # first created -> highest priority.
+
+  #Todo investigate why I get á ú with 'a' and 'u' 
+  match '/signup',  to: 'users#new'
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
