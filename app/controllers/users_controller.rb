@@ -26,12 +26,12 @@ class UsersController < ApplicationController
 
   def edit
     #Todo remove: not required due to filters
-    @user = User.find(params[:id]) 
+    #@user = User.find(params[:id]) 
   end
 
   def update
     #Todo remove: not required due to filters
-    @user = User.find(params[:id])
+    #@user = User.find(params[:id])
     #Todo
     #if @user.update_attributes(user_params)
     if @user.update_attributes(params[:user])
@@ -47,9 +47,12 @@ class UsersController < ApplicationController
 private
 
     def signed_in_user
-      #Todo debug
-      #puts "signed in = #{signed_in?}"
-      redirect_to signin_path, notice: "Please sign in." unless signed_in?
+      unless signed_in?
+        store_location
+        #Todo debug
+        #puts "signed in = #{signed_in?}"
+        redirect_to signin_path, notice: "Please sign in."
+      end
     end
 
     def correct_user
