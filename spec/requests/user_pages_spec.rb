@@ -5,7 +5,6 @@ describe "User pages" do
 
   subject { page }
 
-#----------------------------------------------
   describe "index" do
     before do
       sign_in FactoryGirl.create(:user)
@@ -23,8 +22,6 @@ describe "User pages" do
       end
     end
   end
-
-#----------------------------------------------
 
   describe "profile page" do
   	let(:user) { FactoryGirl.create(:user) }
