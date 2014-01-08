@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:edit, :update]
+  before_filter :correct_user,   only: [:edit, :update]
+
 
   def show
-	@user = User.find(params[:id])
+	   @user = User.find(params[:id])
   end
 
   def new
@@ -23,10 +25,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    #Todo remove: not required due to filters
+    @user = User.find(params[:id]) 
   end
 
   def update
+    #Todo remove: not required due to filters
     @user = User.find(params[:id])
     #Todo
     #if @user.update_attributes(user_params)
@@ -43,8 +47,16 @@ class UsersController < ApplicationController
 private
 
     def signed_in_user
+      #Todo debug
+      #puts "signed in = #{signed_in?}"
       redirect_to signin_path, notice: "Please sign in." unless signed_in?
     end
 
+    def correct_user
+      @user = User.find(params[:id])
+      #Todo debug
+      #puts "root_path is: #{root_path}"
+      redirect_to(root_path) unless current_user?(@user)
+    end
 
 end
