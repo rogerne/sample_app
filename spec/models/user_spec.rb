@@ -137,7 +137,7 @@ describe User do
     it "should be saved as all lower-case" do
       @user.email = mixed_case_email
       @user.save
-      puts "Puts .reload = " + @user.reload.email
+      # puts "Puts .reload = " + @user.reload.email
       @user.reload.email.should == mixed_case_email.downcase
     end
   end
@@ -147,5 +147,28 @@ describe User do
 
     its(:remember_token) { should_not be_blank } 
   end
+  
+  describe "micropost associations" do
 
+    before { @user.save }
+    let!(:older_micropost) do
+      FactoryGirl.create(:micropost, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_micropost) do
+      FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right microposts in the right order" do
+      @user.microposts.should == [newer_micropost, older_micropost]
+    end
+
+    it "should destroy associated microposts" do
+      microposts = @user.microposts
+      @user.destroy
+      
+      microposts.each do |micropost|
+        Micropost.find_by_id(micropost.id).should be_nil
+      end
+    end
+  end
 end
